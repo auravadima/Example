@@ -1,0 +1,238 @@
+// colors
+side-menu-grey = #2f373b
+btn-blue = #1ab5b3
+white = #fff
+filter = rgba(26, 181, 179, 0.9)
+info-grey = #6b7072
+info = rgba(26, 181, 179, 0.9)
+box-grey = #a9a9a9
+box-light-grey = #d4d4d4
+text-grey = #6b7072
+
+.side-menu-opened
+  transform translateX(20rem)
+  opacity 1 !important
+  &:after
+    transform rotate(180deg)
+    left 21rem !important
+body
+  font-size 15px
+.contacts
+  position fixed
+  z-index 2
+  background-color info
+  width 5rem
+  height 5rem
+  top 0
+  right 0
+  &-popover
+    display none
+    position absolute
+    width 14rem
+    height 7rem
+    background-color alpha(black, 0.7)
+    border-radius 5px
+    border 1px solid alpha(black, 0.4)
+    right 0
+    top 5rem
+    span
+      display inline-block
+      margin-top 0.5rem
+      margin-left 0.5rem
+      color: white
+      img
+        width 1.5rem
+        height 1.5rem
+        margin-right 0.5rem
+  &-img
+    position fixed
+    z-index 2
+    width 5rem
+    height 5rem
+    top 0
+    right 0
+    padding: 0.3rem
+.side-menu
+  background-color side-menu-grey
+  z-index 2
+  position fixed
+  left -20rem
+  top 0
+  width 20rem
+  text-align center
+  height 100%
+  transition transform 0.5s, opacity 0.5s
+  box-shadow 0 0 100px black
+  &_mobile-head
+    display none
+  &:after
+    cursor pointer
+    content ''
+    display block
+    width 3rem
+    height 4rem
+    background-image url('../img/arrow-open.png')
+    position fixed
+    top 45vh
+    left 0
+    transition transform 0.5s, left 0.3s
+  &_header
+    background-color white
+    h1
+      font-size 3.2em
+      padding-top 2rem
+      margin 0
+    p
+      margin 0
+  &_nav
+    list-style none
+    text-align right
+    padding 0
+    margin 0 auto
+    text-transform uppercase
+    li
+      a
+        display block
+        padding-right 1.5rem
+        text-decoration none
+        color white
+        height 4rem
+        line-height 4rem
+        box-shadow 0 0 3px rgba(0,0,0,0.2)
+        transition all 0.4s
+        &:hover
+          background-color btn-blue
+  &_info
+    margin 0
+    padding-top 0.5rem
+    list-style none
+    text-align right
+    background-color side-menu-grey
+    border-bottom: 1px solid alpha(black, 0.5)
+    li
+      a
+        padding-right 1.5rem
+        display inline-block
+        text-decoration none
+        color info-grey
+    li:not(:first-child)
+      font-size 0.8rem
+      line-height 1.5rem
+      a:hover
+        color white
+    li:first-child
+      a
+        color filter
+        padding-right 0.5rem
+      &:after
+        content ''
+        display inline-block
+        height 1rem
+        width 1rem
+        background-image url('../img/filter.png')
+        vertical-align middle
+        margin-right 0.7rem
+  &_social
+    background-color side-menu-grey
+    list-style none
+    margin 0
+    padding-top 1rem
+    text-align right
+    padding-right 1.2rem
+    li
+      display inline-block
+      margin 0.3rem
+  &_rights
+    margin 0
+    padding-top 1rem
+    background-color side-menu-grey
+    color text-grey
+    font-size 0.7rem
+.home-content
+  .col-md-4
+    height 22rem
+    border 1px solid black
+    &:nth-child(even)
+      background-color box-grey
+    &:nth-child(odd)
+      background-color box-light-grey
+.about
+  margin-top 2rem
+  &-left
+    border-right 1px solid alpha(black, 0.2)
+    &_main-img
+      height 20rem
+      background-color box-grey
+    &_staffs
+      .staff
+        float left
+        height 14rem
+        width 14rem
+        margin 0.5rem
+      .staff:nth-child(even)
+        background-color box-grey
+      .staff:nth-child(odd)
+        background-color box-light-grey
+  &-right
+    &_skills
+      .about-skills-title
+        font-size 1.5rem
+        font-weight 100
+        margin-top 0
+      .about-skill
+        margin-bottom 1rem
+        &-title
+          height 0.5rem
+          font-size 0.9rem
+          .skill-name
+            width 90%
+            float left
+            margin 0
+            font-weight 300
+          .skill-percent
+            width 10%
+            float right
+            margin 0
+            font-weight 300
+            &:after
+              content: '%'
+        .skill-meter
+          margin-top 1rem
+          height 2.3rem
+          border 1px solid alpha(black, 0.3)
+          border-radius 3px
+          .meter
+            height 2.3rem
+            background-color alpha(black, 0.08)
+    .about-reviews
+      &-title
+        font-size 1.5rem
+        font-weight 100
+      &_card
+        border 1px solid alpha(black, 0.15)
+        &-top
+          height 5.5rem
+          margin 0
+          background-color box-light-grey
+          .left-side
+            width 5.5rem
+          .right-side
+            line-height 5.5rem
+            text-align left
+            height 100%
+            background-color btn-blue
+        p
+          padding 1rem
+          font-size 1.3rem
+          line-height 2rem
+          color text-grey
+    .services
+      &-title
+        font-size 2rem
+        font-weight 100
+        margin-bottom 1rem
+      ul
+        color text-grey
+        padding-left 1rem
+        line-height 2rem
+@import "mobile.styl"
